@@ -1,0 +1,13 @@
+transformers==4.18.0
+tqdm
+torch
+pandas
+pytorch-lightning==1.5.10
+numpy
+Pillow
+matplotlib
+scikit-learn
+git+https://github.com/google-research/bleurt.git
+scipy>=1.9
+pyyaml
+gensim

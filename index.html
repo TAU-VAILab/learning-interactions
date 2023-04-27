@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:image" content="https://tau-vailab.github.io/learning-interactions/assets/ski.jpg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <style>
+        .teaser_desc {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            color: #000;
+            visibility: hidden;
+            opacity: 0;
+
+            /* transition effect. not necessary */
+            transition: opacity .2s, visibility .2s;
+
+            margin: auto;
+            font-family: monospace;
+            text-align: center;
+            line-height: 130px;
+            font-size: 15pt;
+
+        }
+
+        .teaser:hover .teaser_desc {
+            visibility: visible;
+            opacity: 0.8;
+        }
+
+        .teaser_img {
+            height: 150px;
+        }
+
+        .pipe {
+            max-height: 200px;
+            width: auto;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .pipe_card {
+            border: 0px;
+        }
+    </style>
+    <title>Learning Interactions</title>
+</head>
+
+<body class="container" style="max-width:840px">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+    <!-- heading -->
+    <div>
+
+        <!-- title -->
+        <div class='row mt-5 mb-3'>
+            <div class='col text-center'>
+                <p class="h2 font-weight-normal">Learning Human-Human Interactions in Images from Weak Textual
+                    Supervision</p>
+            </div>
+        </div>
+
+        <!-- authors -->
+        <div class="col text-center h6 font-weight-bold mb-2 ">
+            <span><a class="col-md-4 col-xs-6 pb-2" href="https://morrisalp.github.io/">Morris Alper</a></span>
+            <span><a class="col-md-4 col-xs-6 pb-2" href="https://www.elor.sites.tau.ac.il/">Hadar
+                    Averbuch-Elor</a></span>
+        </div>
+
+        <!-- affiliations -->
+        <div class='row mb-1'>
+            <div class='col text-center'>
+                <p class="h6">
+                    <a href="https://english.tau.ac.il/"><span>Tel Aviv University</span></a>
+                </p>
+            </div>
+        </div>
+
+        <div class='row mt-2 mb-3'>
+            <div class='col text-center'>
+                <p class="h3 font-weight-normal">ICCV 2023</p>
+            </div>
+        </div>
+
+
+        <!-- links -->
+        <div class='row mb-4'>
+            <div class='col text-center'>
+                <a href="https://arxiv.org/abs/2304.14104" target="_blank" class="btn btn-outline-primary"
+                    role="button">
+                    <i class="ai ai-arxiv"></i>
+                    arXiv
+                </a>
+                <a href="https://github.com/TAU-VAILab/learning-interactions" target="_blank"
+                    class="btn btn-outline-primary" role="button">
+                    <i class="fa fa-github"></i>
+                    Code
+                </a>
+                <a href="https://github.com/TAU-VAILab/learning-interactions/tree/main/data" target="_blank"
+                    class="btn btn-outline-primary" role="button">
+                    <i class="fa fa-database"></i>
+                    Dataset
+                </a>
+                <a href="web/viz.html" target="_blank" class="btn btn-outline-primary" role="button">
+                    <i class="fa fa-eye"></i>
+                    Interactive Visualization
+                </a>
+            </div>
+        </div>
+
+        <!-- teaser -->
+        <div class='row justify-content-center'>
+
+            <div class="card teaser teaser_img_card">
+                <img src="assets/teaser_1.jpg" class="img-fluid rounded mx-auto d-block teaser_img">
+                <p class="teaser_desc">dancing</p>
+            </div>
+            <div class="card teaser teaser_img_card">
+                <img src="assets/teaser_2.jpg" class="img-fluid rounded mx-auto d-block teaser_img">
+                <p class="teaser_desc">coaching</p>
+            </div>
+            <div class="card teaser teaser_img_card">
+                <img src="assets/teaser_3.jpg" class="img-fluid rounded mx-auto d-block teaser_img">
+                <p class="teaser_desc">tackling</p>
+            </div>
+            <div class="card teaser teaser_img_card">
+                <img src="assets/teaser_4.jpg" class="img-fluid rounded mx-auto d-block teaser_img">
+                <p class="teaser_desc">having a picnic</p>
+            </div>
+
+            <div class='text-center col-md-12 col-sm-12 col-xs-12 align-middle mt-1'>
+                <p class='h6'>
+                    <em>How are these people interacting?<br>(Hover to see the output of a model trained on our
+                        pseudo-labels.)</em>
+                </p>
+            </div>
+            <div class='col-md-12 col-sm-12 col-xs-12 align-middle mt-1'>
+                <p class="text-break">
+                    Human-human interactions (HHI) in images are diverse and cannot be easily described by a fixed set
+                    of categories.
+                    They often rely on contextual cues (e.g. the clothes and cake in the first image) and may involve
+                    participants at a distance (as in the last image).
+                </p>
+            </div>
+            <div class='col-md-12 col-sm-12 col-xs-12 align-middle mt-1'>
+                <p class='h6 font-weight-bold '>
+                    In this work, we propose to model HHI understanding in images as <em>free text generation</em> to
+                    capture the vast variety of
+                    ways in which people interact, learning them by training a model to produce HHI pseudo-labels
+                    from Internet image captions.
+                    We provide the <em>Waldo and Wenda</em> benchmark for this task along with an evaluation framework,
+                    and show that training on our pseudo-labels improves HHI understanding beyond SOTA captioning and
+                    situation recognition models.
+                </p>
+                <hr>
+            </div>
+        </div>
+
+        <!-- abstract -->
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 text-center d-none d-sm-block">
+                <div class="row mt-2">
+                    <a href="https://arxiv.org/pdf/2304.14104.pdf"
+                        style="max-width:200px; margin-left:auto; margin-right:auto"
+                        class="paper-link"><!-- pdf link -->
+                        <img src="assets/paper-snapshot.png" alt="paper-snapshot" class="img-thumbnail" width="80%"
+                            style="box-shadow: 10px 10px 5px grey;">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-12">
+                <p class="h4 font-weight-bold ">Abstract</p>
+                <p style="line-height: 1;">
+                    Interactions between humans are diverse and context-dependent, but previous works have treated them
+                    as categorical, disregarding the heavy tail of possible interactions. We propose a new paradigm of
+                    learning human-human interactions as free text from a single still image, allowing for flexibility
+                    in modeling the unlimited space of situations and relationships between people. To overcome the
+                    absence of data labelled specifically for this task, we use knowledge distillation applied to
+                    synthetic caption data produced by a large language model without explicit supervision. We show that
+                    the pseudo-labels produced by this procedure can be used to train a captioning model to effectively
+                    understand human-human interactions in images, as measured by a variety of metrics that measure
+                    textual and semantic faithfulness and factual groundedness of our predictions. We further show that
+                    our approach outperforms SOTA image captioning and situation recognition models on this task. We
+                    will release our code and pseudo-labels along with <b>Waldo and Wenda</b>, a manually-curated test
+                    set for
+                    still image human-human interaction understanding.
+                </p>
+            </div>
+        </div>
+
+        <!-- method -->
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <hr>
+                <p class="h4 font-weight-bold">Our Method</p>
+                <p>
+                    Internet image captions often contain weak cues to HHI, which are not confined to a specific syntactic category such as verbs and
+                    which may be surrounded by many irrelevant details.
+                    
+                    To overcome these challenges, we infer interactions from the original captions by applying knowledge distillation
+                    to synthetic data generated by a large language model, without explicit supervision. 
+
+                    We prompt a teacher large language model (LM<sub>T</sub>) to produce synthetic captions corresponding to
+                    given interactions, including seed in-context examples and filtering with a natural language inference (NLI) model and text heuristics.
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="card pipe_card">
+                <img src="assets/pipe_1.png" class="img-fluid rounded mx-auto d-block pipe pipe1">
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <p>
+                    We then train a smaller student language model (LM<sub>S</sub>) on these synthetic caption-interaction pairs, teaching it to
+                    summarize HHI from captions.
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="card pipe_card">
+                <img src="assets/pipe_2.png" class="img-fluid rounded mx-auto d-block pipe pipe2">
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <p>
+                    We train a smaller student language model (LM<sub>S</sub>) on these synthetic caption-interaction pairs, teaching it to
+                    summarize HHI from captions.
+                    We then apply this model to the captions in Who's Waldo to produce <b>HHI pseudo-labels</b> for the images in the dataset.
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="card pipe_card">
+                <img src="assets/ski.jpg" class="img-fluid rounded mx-auto d-block pipe pipe4 pipe_img">
+            </div>
+            <div class="card pipe_card">
+                <img src="assets/pipe_3.png" class="img-fluid rounded mx-auto d-block pipe pipe3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <p>
+                    Finally, we use these pseudo-labels to fine-tune image captioning models for HHI understanding.
+                </p>
+            </div>
+        </div>
+
+        <!-- viz -->
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <hr>
+                <p class="h4 font-weight-bold">Interactive Visualization</p>
+                <p>
+                    See our <a href="web/viz.html">interactive visualization</a> for results of all models on
+                    the 1K-item <em>Waldo and Wenda</em> HHI benchmark and the >8K-item <em>imSitu-HHI</em> subset
+                    of the imSitu situation recognition benchmark.
+                </p>
+            </div>
+        </div>
+
+        <!-- ack -->
+        <div>
+            <hr>
+            <div class="row">
+                <div class='col-md-12 col-sm-12 col-xs-12'>
+                    <p class='h4 font-weight-bold '>Acknowledgements</p>
+                    <p>
+                        We thank Ron Mokady for providing helpful feedback. This work was supported by a research gift
+                        from Meta and the Alon fellowship.
+                    </p>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <!-- citation -->
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <p class="h4 font-weight-bold ">Citation</p>
+                <pre><code>@InProceedings{alper2023learning,
+    author    = {Morris Alper and Hadar Averbuch-Elor},
+    title     = {Learning Human-Human Interactions in Images from Weak Textual Supervision},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    year      = {2023}
+}</code></pre>
+            </div>
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <title>Learning Interactions (Visualization)</title>
+    <style>
+        .cannot {
+            margin: 10px;
+            padding: 10px;
+            font-family: monospace;
+            display: inline-block;
+        }
+
+        img.viz {
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+
+        #item_number {
+            width: 70px;
+        }
+
+        .res {
+            min-height: 500px;
+            padding: 20px;
+        }
+
+        #results, #results_img {
+            margin: 20px;
+        }
+
+        #results_img {
+            margin-top: 80px;
+        }
+        
+    </style>
+</head>
+
+<body class="container" style="max-width:840px">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+    <!-- heading -->
+    <div>
+
+        <!-- title -->
+        <div class='row mt-5 mb-3'>
+            <div class='col text-center'>
+                <p class="h2 font-weight-normal">Learning Human-Human Interactions in Images from Weak Textual
+                    Supervision – Interactive Visualization</p>
+                <p class="h3 font-weight-normal"><a href="../index.html">(Homepage)</a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <p>
+                    Below we show results of the various models discussed in our paper, on both the Waldo & Wenda and
+                    imSitu-HHI datasets.
+                    Select the dataset and model that you would like to use, and click "Previous" and "Next" to browse
+                    through the results.
+                    For models supporting beam search, we show the top 5 beams (out of 32).
+                    Items appear in random order
+                    Images are downscaled for convenience, but results are displayed for the original images.
+                    For externally hosted images, we provide an image URL rather than displaying the image here.
+                </p>
+                <noscript>
+                    <p>
+                        <b>This page requires JavaScript to be enabled.
+                            Please enable scripts in your browser.</b>
+                    </p>
+                </noscript>
+                <hr>
+            </div>
+        </div>
+
+        <script src="gt.js"></script>
+        <script src="names.js"></script>
+        <script src="res.js"></script>
+        <script src="sources.js"></script>
+        <script src="urls.js"></script>
+        <script src="metrics.js"></script>
+        <script src="viz.js"></script>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <label for="dataset">Choose a test set:</label>
+                <select name="dataset" id="dataset" onchange="switch_dataset()">
+                    <option value="ww">Waldo and Wenda</option>
+                    <option value="is">imSitu-HHI</option>
+                </select>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <label for="model">Choose a model:</label>
+                <select name="model" id="model" onchange="update_view()">
+                    <option value="CoFormer">CoFormer</option>
+                    <option value="ENv2 (COCO)">ENv2 (COCO)</option>
+                    <option value="CLIPCap (COCO)">CLIPCap (COCO)</option>
+                    <option value="CLIPCap (CC)">CLIPCap (CC)</option>
+                    <option value="CLIPCap (CC+WW)">CLIPCap (CC+WW)</option>
+                    <option value="EncDec (pHHI)">*EncDec (pHHI)</option>
+                    <option value="CLIPCap (CC+pHHI)" selected>*CLIPCap (CC+pHHI)</option>
+                </select> &nbsp;&nbsp;&nbsp;&nbsp; (models with * are trained on our pseudo-labels)
+            </div>
+
+            <div class="col-md-7 col-sm-7 col-xs-7 res">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="#/" class="previous" onclick="previous()">&laquo; Previous</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Item <input type="number" id="item_number" onchange="numchange()"> / <span id="c2"></span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#/" class="next" onclick="next()">Next &raquo;</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <br>
+                <div id="results"></div>
+            </div>
+
+            <div class="col-md-5 col-sm-5 col-xs-5 res">
+                <div id="results_img"></div>
+            </div>
+        </div>
+
+        <script src="nav.js"></script>
+
+</body>
+
+</html>

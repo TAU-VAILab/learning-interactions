@@ -1,0 +1,30 @@
+data:
+  pad_token: '*'
+  gpt2_pretrained: gpt2
+  clip_pretrained: openai/clip-vit-base-patch32
+
+model:
+  use_clipcap: False
+  gpt2_pretrained: gpt2
+  clip_pretrained: openai/clip-vit-base-patch32
+  freeze_encoder: True
+  prefix_length: 10
+  cross_attention_hidden_size: 512
+  n_output_tokens: 32
+  beta1: 0.9
+  beta2: 0.999
+  weight_decay: 0.1
+  verb_ignore_index: -100
+
+train:
+  max_epochs: 17
+  version: # override for version name (save dir)
+  save_dir: # override to save in different dir than default (cwd)
+
+test:
+  checkpoint: # command-line entry required
+  output_dir: output
+  output_fn: output/test_output.csv
+  use_verbs: True
+  do_beam: True
+  beam_k: 32
